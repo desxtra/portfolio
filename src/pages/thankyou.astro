@@ -1,10 +1,34 @@
+---
+import { Astro } from 'astro'
+const auth = Astro.url.searchParams.get("auth");
+if (auth !== "true") {
+  throw Astro.redirect("/", 302);
+}
+---
+
 <html>
   <head>
-    <title>Thanks!</title>
+    <title>Thank You</title>
+    <meta http-equiv="refresh" content="3;url=/" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: sans-serif;
+        background: #f0f0f0;
+        color: #333;
+      }
+      .thank-you {
+        text-align: center;
+      }
+    </style>
   </head>
-  <body style="font-family: sans-serif; padding: 2rem;">
-    <h1>Thank You!</h1>
-    <p>Your message has been sent. I'll get back to you soon.</p>
-    <a href="/">← Back to Home</a>
+  <body>
+    <div class="thank-you">
+      <h1>Thanks for your message!</h1>
+      <p>You’ll be redirected to the homepage soon...</p>
+    </div>
   </body>
 </html>
