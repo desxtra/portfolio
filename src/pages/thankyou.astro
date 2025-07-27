@@ -1,15 +1,22 @@
 ---
-import { Astro } from 'astro'
-const auth = Astro.url.searchParams.get("auth");
-if (auth !== "true") {
-  throw Astro.redirect("/", 302);
-}
+import "../styles/global.css";
 ---
 
 <html>
   <head>
     <title>Thank You</title>
-    <meta http-equiv="refresh" content="3;url=/" />
+    <meta charset="UTF-8" />
+    <script>
+      // Redirect jika query param ?auth=true tidak ada
+      if (!window.location.search.includes("auth=true")) {
+        window.location.href = "/";
+      }
+
+      // Auto redirect ke home setelah 3 detik
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
+    </script>
     <style>
       body {
         display: flex;
@@ -20,6 +27,7 @@ if (auth !== "true") {
         background: #f0f0f0;
         color: #333;
       }
+
       .thank-you {
         text-align: center;
       }
