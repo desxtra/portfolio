@@ -1,0 +1,18 @@
+---
+---
+<section id="projects" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Array.from({ length: 3 }).map((_, i) => (
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+          <img src="https://via.placeholder.com/600x400?text=Project+{i + 1}" alt="Project" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h4 class="font-bold text-xl text-gray-800">Project {i + 1}</h4>
+            <p class="text-gray-600 mt-2">Short description about the project. Tech stack, goals, and achievements.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
