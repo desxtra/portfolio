@@ -10,10 +10,12 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Destraxion Portfolio</title>
   </head>
-  <body>
+  <body class="bg-gray-50 text-gray-900 font-sans">
     <Header />
-    <main class="max-w-5xl mx-auto px-6 sm:px-8 md:px-10">
-      <slot />
+    <main>
+      <div class="max-w-5xl mx-auto px-6 sm:px-8 md:px-10">
+        <slot />
+      </div>
     </main>
   </body>
 </html>
