@@ -11,12 +11,19 @@ import Footer from "../components/Footer.astro"
 ---
 
 <Layout>
-  <Header />
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <!-- Main content -->
   <Hero />
   <About />
   <Projects />
   <TechStack />
   <GitHubStats />
   <ContactForm />
-  <Footer />
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
 </Layout>

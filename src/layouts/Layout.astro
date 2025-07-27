@@ -1,17 +1,22 @@
 ---
-import '../styles/global.css';
+// src/layouts/Layout.astro
+import "../styles/global.css"
 ---
-
 <html lang="en">
   <head>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destra Xion Portfolio</title>
+    <title>Destraxion Portfolio</title>
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Separate Header and Footer slot -->
+    <slot name="header" />
+
     <main class="max-w-5xl mx-auto px-6 sm:px-8 md:px-10">
       <slot />
     </main>
+
+    <slot name="footer" />
   </body>
 </html>
