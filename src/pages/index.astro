@@ -11,12 +11,42 @@ import "../styles/global.css";
       <h1>Hi, I'm Destraxion</h1>
       <p>Welcome to my portfolio.</p>
 
-      <form action="https://portfolio-backend-tau-green.vercel.app/api" method="POST">
+      <form id="contact-form">
         <input type="text" name="name" placeholder="Nama" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
         <textarea name="message" placeholder="Message" required></textarea><br>
         <button type="submit">Send</button>
       </form>
+
+      <script>
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const data = new URLSearchParams(formData);
+
+          try {
+            const res = await fetch("https://portfolio-backend-tau-green.vercel.app/api", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: data
+            });
+
+            const result = await res.json();
+            if (result.status === "ok") {
+              window.location.href = "/thankyou";
+            } else {
+              alert("Failed to send message");
+            }
+          } catch (err) {
+            alert("Error submitting the form.");
+            console.error(err);
+          }
+        });
+      </script>
     </div>
   </body>
 </html>
