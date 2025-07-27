@@ -1,18 +1,11 @@
----
----
-<section id="projects" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {Array.from({ length: 3 }).map((_, i) => (
-        <div class="bg-white shadow rounded-lg overflow-hidden">
-          <img src="https://via.placeholder.com/600x400?text=Project+{i + 1}" alt="Project" class="w-full h-48 object-cover" />
-          <div class="p-4">
-            <h4 class="font-bold text-xl text-gray-800">Project {i + 1}</h4>
-            <p class="text-gray-600 mt-2">Short description about the project. Tech stack, goals, and achievements.</p>
-          </div>
-        </div>
-      ))}
+<section id="projects" class="py-20">
+  <h3 class="text-3xl font-semibold mb-6">Projects</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-4 rounded shadow">
+      <img src="https://via.placeholder.com/300x180" class="rounded mb-4" alt="Project" />
+      <h4 class="font-bold text-lg mb-2">Project Name</h4>
+      <p class="text-sm text-gray-600">Short project description goes here.</p>
     </div>
+    <!-- Repeat more cards -->
   </div>
 </section>

@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Scrollbar */
-body::-webkit-scrollbar {
-  width: 6px;
-}
-body::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 5px;
+body {
+  @apply bg-gray-50 text-gray-800 font-sans antialiased;
 }
