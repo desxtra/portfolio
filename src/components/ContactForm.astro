@@ -1,9 +1,80 @@
-<section id="contact" class="py-20">
-  <h3 class="text-3xl font-semibold mb-6">Contact Me</h3>
-  <form class="grid gap-6 max-w-xl" id="contact-form">
-    <input name="name" placeholder="Name" class="input input-bordered" required />
-    <input name="email" type="email" placeholder="Email" class="input input-bordered" required />
-    <textarea name="message" placeholder="Message" class="textarea textarea-bordered h-32 resize-none" required></textarea>
-    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition">Send</button>
-  </form>
+---
+---
+
+// Tailwind Container
+<section id="contact" class="py-20 bg-gray-100">
+  <div class="max-w-2xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-6">Contact Me</h3>
+    
+    <form id="contact-form" class="grid gap-4 bg-white p-6 rounded-lg shadow-lg">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="border border-gray-300 rounded px-4 py-2"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="border border-gray-300 rounded px-4 py-2"
+      />
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Your Message"
+        required
+        class="border border-gray-300 rounded px-4 py-2 resize-none"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded transition"
+      >
+        Send
+      </button>
+      <p id="response-message" class="text-sm mt-2"></p>
+    </form>
+  </div>
 </section>
+
+<!-- Simple JS Handling -->
+<script is:inline>
+  const form = document.getElementById('contact-form');
+  const responseMessage = document.getElementById('response-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const payload = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      payload.append(key, value);
+    }
+
+    try {
+      const res = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: payload,
+      });
+
+      const data = await res.json();
+
+      if (data.status === 'ok') {
+        responseMessage.textContent = 'Message sent successfully!';
+        responseMessage.className = 'text-green-600';
+        form.reset();
+      } else {
+        responseMessage.textContent = 'Failed to send message.';
+        responseMessage.className = 'text-red-600';
+      }
+    } catch (err) {
+      responseMessage.textContent = 'An error occurred.';
+      responseMessage.className = 'text-red-600';
+    }
+  });
+</script>
