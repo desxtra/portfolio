@@ -1,40 +1,100 @@
-<form id="contact-form">
-  <input type="text" name="name" placeholder="Nama" required><br>
-  <input type="email" name="email" placeholder="Email" required><br>
-  <textarea name="message" placeholder="Message" required></textarea><br>
-  <button type="submit">Send</button>
-</form>
+---
+import "../styles/global.css";
+---
 
-<script>
-  const form = document.getElementById("contact-form");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = new URLSearchParams(formData);
-
-    try {
-      const res = await fetch("https://portfolio-backend-tau-green.vercel.app/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: data
-      });
-
-      if (res.redirected) {
-        window.location.href = res.url;
-      } else {
-        const result = await res.json();
-        if (result.status === "ok") {
-          window.location.href = "/thankyou";
-        } else {
-          alert("Failed to send message");
-        }
+<html>
+  <head>
+    <title>Destraxion</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
       }
-    } catch (err) {
-      alert("Error submitting the form.");
-      console.error(err);
-    }
-  });
-</script>
+
+      .container {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background-color: #3f51b5;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #303f9f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Hi, I'm Destraxion</h1>
+      <p>Welcome to my portfolio.</p>
+
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Nama" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <textarea name="message" placeholder="Message" required></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+
+      <script>
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const data = new URLSearchParams(formData);
+
+          try {
+            const res = await fetch("https://portfolio-backend-tau-green.vercel.app/api", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: data
+            });
+
+            const result = await res.json();
+            if (result.status === "ok") {
+              alert("Message sent successfully");
+              setTimeout(() => {
+                window.location.href = "/thankyou";
+              }, 1000); // 1 second delay
+            } else {
+              alert("Failed to send message");
+            }
+          } catch (err) {
+            alert("Error submitting the form.");
+            console.error(err);
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
