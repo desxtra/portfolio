@@ -7,12 +7,10 @@ import "../styles/global.css";
     <title>Thank You</title>
     <meta charset="UTF-8" />
     <script>
-      // Redirect jika query param ?auth=true tidak ada
       if (!window.location.search.includes("auth=true")) {
         window.location.href = "/";
       }
 
-      // Auto redirect ke home setelah 3 detik
       setTimeout(() => {
         window.location.href = "/";
       }, 3000);
