@@ -3,19 +3,10 @@ import { useEffect, useState } from 'react'
 ---
 
 <style>
-  .floating-toggle {
-    @apply fixed bottom-4 right-4 z-50 bg-white dark:bg-gray-800 text-gray-800 dark:text-white
-      border border-gray-300 dark:border-gray-600 rounded-full shadow-md
-      p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition;
-  }
-
-  .icon {
-    @apply w-6 h-6;
-  }
 </style>
 
 <button
-  class="floating-toggle"
+  class="fixed bottom-4 right-4 z-50 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 rounded-full shadow-md p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
   onclick="
     const html = document.documentElement;
     html.classList.toggle('dark');
@@ -32,9 +23,10 @@ import { useEffect, useState } from 'react'
   >
     <path
       stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M12 3v1m0 16v1m8.66-12.66l-.707.707M4.05 19.95l-.707.707M21 12h1M2 12H1m16.95 7.05l-.707-.707M4.05 4.05l-.707-.707M12 5a7 7 0 000 14a7 7 0 000-14z"
-    />
-  </svg>
-</button>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-6 h-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
