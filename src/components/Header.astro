@@ -2,12 +2,12 @@
 import '../styles/global.css'
 ---
 
-<header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur shadow-md">
+<header class="fixed top-0 z-50 w-full bg-white dark:bg-gray-900/80 backdrop-blur shadow-md">
   <nav class="w-full px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
     <a href="/" class="text-xl font-bold text-blue-600">Desxtra</a>
 
     <!-- Mobile Toggle -->
-    <button id="menu-toggle" class="md:hidden text-gray-700" aria-label="Toggle Menu">
+    <button id="menu-toggle" class="md:hidden text-gray-700 dark:text-gray-300" aria-label="Toggle Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 6h16M4 12h16M4 18h16" />
@@ -15,7 +15,7 @@ import '../styles/global.css'
     </button>
 
     <!-- Desktop Nav -->
-    <ul id="nav-links" class="hidden md:flex space-x-6 text-gray-700 font-medium">
+    <ul id="nav-links" class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium">
       <li><a href="#about" class="hover:text-blue-600">About</a></li>
       <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
       <li><a href="#techstack" class="hover:text-blue-600">Tech Stack</a></li>
@@ -25,12 +25,12 @@ import '../styles/global.css'
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-6 pb-4 bg-white/90 backdrop-blur shadow-md">
-    <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
-    <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a>
-    <a href="#techstack" class="block py-2 text-gray-700 hover:text-blue-600">Tech Stack</a>
+  <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-6 pb-4 bg-white dark:bg-gray-900/90 backdrop-blur shadow-md">
+    <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600">About</a>
+    <a href="#projects" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600">Projects</a>
+    <a href="#techstack" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600">Tech Stack</a>
     <a href="#certs" class="hover:text-blue-600">Certs</a>
-    <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+    <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600">Contact</a>
   </div>
 </header>
 
