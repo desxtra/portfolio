@@ -1,11 +1,161 @@
 <section id="projects" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
   <h3 class="text-4xl font-bold mb-8 text-gray-800 dark:text-gray-100">Projects</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl px-4">
-    <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
-      <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="hollow-project" />
-      <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Hollow</h4>
-      <p class="text-base text-gray-700 dark:text-gray-300">A fantasy 3D perspective game rich in stories. <span class="italic text-blue-600 dark:text-blue-400">[Under Development]</span></p>
+
+  <!-- Horizontal scroll container with arrows -->
+  <div class="w-full max-w-6xl relative">
+    <!-- Left arrow -->
+    <button
+      id="projectScrollLeft"
+      class="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all opacity-0 pointer-events-none"
+    >
+      <svg
+        class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Right arrow -->
+    <button
+      id="projectScrollRight"
+      class="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all"
+    >
+      <svg
+        class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Scroll container dengan padding keluar, bukan di track -->
+    <div id="projectScrollContainer" class="overflow-hidden pb-8 px-4">
+      <div
+        id="projectScrollTrack"
+        class="grid grid-flow-col
+               auto-cols-[100%]
+               sm:auto-cols-[calc((100%-1.5rem)/2)]
+               lg:auto-cols-[calc((100%-3rem)/3)]
+               gap-6
+               transition-transform duration-500 ease-out"
+      >
+        <!-- Project Items -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+          <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="hollow-project" />
+          <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Hollow</h4>
+          <p class="text-base text-gray-700 dark:text-gray-300">
+            A fantasy 3D perspective game rich in stories.
+            <span class="italic text-blue-600 dark:text-blue-400">[Under Development]</span>
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+          <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-2" />
+          <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Portfolio Website</h4>
+          <p class="text-base text-gray-700 dark:text-gray-300">
+            A modern portfolio website built with Astro and Tailwind CSS. Features dark mode and responsive design.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+          <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-3" />
+          <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">E-Commerce API</h4>
+          <p class="text-base text-gray-700 dark:text-gray-300">
+            RESTful API for e-commerce platform built with Node.js, Express, and MongoDB. Includes authentication and payment integration.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+          <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-4" />
+          <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Task Management App</h4>
+          <p class="text-base text-gray-700 dark:text-gray-300">
+            A productivity app with real-time collaboration features. Built with React, Socket.io, and PostgreSQL.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+          <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-5" />
+          <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Weather Dashboard</h4>
+          <p class="text-base text-gray-700 dark:text-gray-300">
+            Beautiful weather dashboard with interactive charts and forecasts. Uses OpenWeather API and Chart.js.
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- Repeat more cards as needed -->
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollContainer = document.getElementById("projectScrollContainer");
+    const scrollTrack = document.getElementById("projectScrollTrack");
+    const scrollLeft = document.getElementById("projectScrollLeft");
+    const scrollRight = document.getElementById("projectScrollRight");
+
+    let currentIndex = 0;
+    const gap = 24; // gap-6 = 24px
+
+    function getVisibleItems() {
+      return window.innerWidth >= 1024
+        ? 3
+        : window.innerWidth >= 640
+          ? 2
+          : 1;
+    }
+
+    function getItemWidth() {
+      const visible = getVisibleItems();
+      const totalGap = gap * (visible - 1);
+      return (scrollContainer.clientWidth - totalGap) / visible;
+    }
+
+    function updateScrollPosition() {
+      const translateX = -(currentIndex * (getItemWidth() + gap));
+      scrollTrack.style.transform = `translateX(${translateX}px)`;
+      updateArrows();
+    }
+
+    function updateArrows() {
+      const visible = getVisibleItems();
+      const maxIndex = scrollTrack.children.length - visible;
+      scrollLeft.style.opacity = currentIndex <= 0 ? "0" : "1";
+      scrollLeft.style.pointerEvents = currentIndex <= 0 ? "none" : "auto";
+      scrollRight.style.opacity = currentIndex >= maxIndex ? "0" : "1";
+      scrollRight.style.pointerEvents = currentIndex >= maxIndex ? "none" : "auto";
+    }
+
+    scrollLeft.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateScrollPosition();
+      }
+    });
+    scrollRight.addEventListener("click", () => {
+      const visible = getVisibleItems();
+      const maxIndex = scrollTrack.children.length - visible;
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateScrollPosition();
+      }
+    });
+
+    window.addEventListener("resize", updateScrollPosition);
+
+    updateScrollPosition();
+  });
+</script>
