@@ -1,64 +1,21 @@
 <section id="projects" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
   <h3 class="text-4xl font-bold mb-8 text-gray-800 dark:text-gray-100">Projects</h3>
 
-  <!-- Horizontal scroll container with arrows -->
-  <div class="w-full max-w-6xl relative">
-    <!-- Left arrow -->
-    <button
-      id="projectScrollLeft"
-      class="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all opacity-0 pointer-events-none"
-      aria-label="Scroll projects left"
-    >
-      <svg
-        class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M15 19l-7-7 7-7"
-        ></path>
-      </svg>
-    </button>
-
-    <!-- Right arrow -->
-    <button
-      id="projectScrollRight"
-      class="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all"
-      aria-label="Scroll projects right"
-    >
-      <svg
-        class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 5l7 7-7 7"
-        ></path>
-      </svg>
-    </button>
-
-    <!-- Scroll container -->
-    <div id="projectScrollContainer" class="overflow-hidden pb-8 px-4">
+  <!-- Outer carousel wrapper: relative + overflow-visible for desktop arrows -->
+  <div class="w-full max-w-6xl relative overflow-visible">
+    <!-- Viewport: hides overflowing cards, keeps arrows visible outside -->
+    <div id="projectViewport" class="overflow-hidden pb-8 px-4">
       <div
         id="projectScrollTrack"
-        class="flex gap-6 w-full transition-transform duration-500 ease-out"
+        class="flex gap-3 sm:gap-6 w-full transition-transform duration-500 ease-out"
       >
-        <!-- Each item: equal widths per breakpoint (1/2/3 across) -->
-        <!-- basis calc notes:
-             - mobile (1): calc(100% - 0px)
-             - sm (2): calc((100% - 24px)/2) where gap-6 = 24px and there is 1 gap in view
-             - lg (3): calc((100% - 48px)/3) where 2 gaps in view
-        -->
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
-                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
+        <!-- Mobile: 75vw with max 19.5rem; sm: 2 across; lg: 3 across -->
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                 basis-[75vw] max-w-[19.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="hollow-project" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Hollow</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -67,8 +24,12 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
-                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                 basis-[75vw] max-w-[19.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-2" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Portfolio Website</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -76,8 +37,12 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
-                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                 basis-[75vw] max-w-[19.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-3" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">E-Commerce API</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -85,8 +50,12 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
-                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                 basis-[75vw] max-w-[19.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-4" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Task Management App</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -94,8 +63,12 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
-                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                 basis-[75vw] max-w-[19.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-5" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Weather Dashboard</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -104,12 +77,43 @@
         </div>
       </div>
     </div>
+
+    <!-- Controls: square below on mobile; circular centered outside viewport on md+ -->
+    <div class="mt-4 flex items-center justify-between px-2 md:px-0 md:mt-0 md:h-0">
+      <!-- Left -->
+      <button
+        id="projectScrollLeft"
+        class="z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg transition-all
+               w-10 h-10 rounded-md flex items-center justify-center
+               md:w-auto md:h-auto md:rounded-full md:p-3
+               md:absolute md:left-[-2rem] lg:left-[-2.5rem] md:top-1/2 md:-translate-y-1/2
+               opacity-0 pointer-events-none"
+        aria-label="Scroll projects left"
+      >
+        <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <!-- Right -->
+      <button
+        id="projectScrollRight"
+        class="z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg transition-all
+               w-10 h-10 rounded-md flex items-center justify-center
+               md:w-auto md:h-auto md:rounded-full md:p-3
+               md:absolute md:right-[-2rem] lg:right-[-2.5rem] md:top-1/2 md:-translate-y-1/2"
+        aria-label="Scroll projects right"
+      >
+        <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const scrollContainer = document.getElementById("projectScrollContainer");
     const scrollTrack = document.getElementById("projectScrollTrack");
     const scrollLeft = document.getElementById("projectScrollLeft");
     const scrollRight = document.getElementById("projectScrollRight");
@@ -118,7 +122,6 @@
     const totalItems = scrollTrack.children.length;
 
     function getVisibleItems() {
-      // Match your responsive bases: 1 (default), 2 (sm), 3 (lg)
       if (window.matchMedia("(min-width: 1024px)").matches) return 3;
       if (window.matchMedia("(min-width: 640px)").matches) return 2;
       return 1;
@@ -131,9 +134,8 @@
 
     function getGap() {
       const styles = getComputedStyle(scrollTrack);
-      // For flex-row, horizontal gap is column-gap
-      const gap = parseFloat(styles.columnGap || styles.gap || "24");
-      return isNaN(gap) ? 24 : gap;
+      // mobile: gap-3 = 12px; sm+: gap-6 = 24px
+      return parseFloat(styles.columnGap || styles.gap || "12") || 12;
     }
 
     function getMaxIndex() {
@@ -152,8 +154,7 @@
     function updateScrollPosition() {
       const itemWidth = getItemWidth();
       const gap = getGap();
-      const scrollAmount = itemWidth + gap;
-      const translateX = -(currentIndex * scrollAmount);
+      const translateX = -(currentIndex * (itemWidth + gap));
       scrollTrack.style.transform = `translateX(${translateX}px)`;
       updateArrows();
     }
@@ -176,11 +177,9 @@
     window.addEventListener("resize", () => {
       const maxIndex = getMaxIndex();
       if (currentIndex > maxIndex) currentIndex = maxIndex;
-      // After a resize, item widths change; reapply transform
       updateScrollPosition();
     });
 
-    // Initial state
     updateScrollPosition();
   });
 </script>

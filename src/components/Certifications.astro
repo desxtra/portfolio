@@ -11,122 +11,83 @@ import '../styles/global.css'
     Here are some certifications I've earned to strengthen my knowledge and credibility in the tech field.
   </p>
 
-  <div class="w-full max-w-5xl overflow-visible relative pb-10">
-    <!-- Arrows -->
-    <button
-      id="scrollLeft"
-      class="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 z-30 border border-black dark:border-white bg-white dark:bg-gray-900 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all opacity-0 pointer-events-none"
-    >
-      <!-- Left SVG -->
-      <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-
-    <button
-      id="scrollRight"
-      class="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 z-30 bg-white border border-black dark:border-white dark:bg-gray-900 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all"
-    >
-      <!-- Right SVG -->
-      <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
-
-    <!-- Scrollable certs -->
-    <div id="scrollContainer" class="overflow-hidden pb-20 pt-12">
-      <div id="scrollTrack" class="flex gap-4 w-max px-4 transition-transform duration-500 ease-out">
+  <!-- Outer wrapper: keeps arrows visible outside viewport on desktop -->
+  <div class="w-full max-w-5xl relative overflow-visible pb-10">
+    <!-- Viewport: hides overflowing track; padding leaves room for hover image -->
+    <div id="certViewport" class="overflow-hidden pt-12 pb-12 px-4">
+      <div id="scrollTrack" class="flex gap-3 sm:gap-6 w-full transition-transform duration-500 ease-out">
         <!-- Cert Item -->
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
+        <div
+          class="relative flex-shrink-0 overflow-visible min-w-0
+                 basis-[72vw] max-w-[18.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
+            <!-- Image slides up into the viewport's top padding space -->
             <img
               src="/img/project-hollow.png"
               alt="Certified Cloud Practitioner"
               class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
             />
-            <!-- Text container slide DOWN -->
+            <!-- Text container -->
             <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
               <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
               <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
             </div>
           </div>
         </div>
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
+
+        <div
+          class="relative flex-shrink-0 overflow-visible min-w-0
+                 basis-[72vw] max-w-[18.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
             <img
               src="/img/project-hollow.png"
               alt="Certified Cloud Practitioner"
               class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
             />
-            <!-- Text container slide DOWN -->
             <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
               <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
               <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
             </div>
           </div>
         </div>
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
+
+        <div
+          class="relative flex-shrink-0 overflow-visible min-w-0
+                 basis-[72vw] max-w-[18.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
             <img
               src="/img/project-hollow.png"
               alt="Certified Cloud Practitioner"
               class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
             />
-            <!-- Text container slide DOWN -->
             <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
               <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
               <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
             </div>
           </div>
         </div>
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
+
+        <div
+          class="relative flex-shrink-0 overflow-visible min-w-0
+                 basis-[72vw] max-w-[18.5rem]
+                 sm:basis-[calc((100%-24px)/2)] sm:max-w-none
+                 lg:basis-[calc((100%-48px)/3)]"
+        >
           <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
             <img
               src="/img/project-hollow.png"
               alt="Certified Cloud Practitioner"
               class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
             />
-            <!-- Text container slide DOWN -->
-            <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
-              <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
-              <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
-            </div>
-          </div>
-        </div>
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
-          <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
-            <img
-              src="/img/project-hollow.png"
-              alt="Certified Cloud Practitioner"
-              class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
-            />
-            <!-- Text container slide DOWN -->
-            <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
-              <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
-              <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
-            </div>
-          </div>
-        </div>
-        <div class="relative w-72 flex-shrink-0 overflow-visible">
-          <!-- Hover trigger only on container -->
-          <div class="group relative overflow-visible">
-            <!-- Image slide UP -->
-            <img
-              src="/img/project-hollow.png"
-              alt="Certified Cloud Practitioner"
-              class="absolute top-0 left-1/2 -translate-x-1/2 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100 group-hover:-translate-y-20 rounded-lg shadow-lg w-auto z-10"
-            />
-            <!-- Text container slide DOWN -->
             <div class="border border-black dark:border-white p-6 rounded-lg shadow transition-all duration-500 transform group-hover:translate-y-6 bg-white dark:bg-gray-900 relative z-20 h-32 flex flex-col justify-center">
               <a href="#" class="text-xl font-semibold text-black dark:text-white hover:underline mb-2">Certified Cloud Practitioner</a>
               <p class="text-sm text-gray-500 dark:text-gray-400">DewaCloud Academy · Jul 2025</p>
@@ -135,41 +96,87 @@ import '../styles/global.css'
         </div>
       </div>
     </div>
+
+    <!-- Controls: square below on mobile; circular and centered on md+ (aligned to card center) -->
+    <div class="mt-4 flex items-center justify-between px-2 md:px-0 md:mt-0 md:h-0">
+      <button
+        id="scrollLeft"
+        class="z-30 border border-black dark:border-white bg-white dark:bg-gray-900 shadow-lg transition-all
+               w-10 h-10 rounded-md flex items-center justify-center
+               md:w-auto md:h-auto md:rounded-full md:p-3
+               md:absolute md:left-[-2rem] lg:left-[-2.5rem] md:top-[8.5rem]
+               opacity-0 pointer-events-none"
+        aria-label="Scroll left"
+      >
+        <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        id="scrollRight"
+        class="z-30 border border-black dark:border-white bg-white dark:bg-gray-900 shadow-lg transition-all
+               w-10 h-10 rounded-md flex items-center justify-center
+               md:w-auto md:h-auto md:rounded-full md:p-3
+               md:absolute md:right-[-2rem] lg:right-[-2.5rem] md:top-[8.5rem]"
+        aria-label="Scroll right"
+      >
+        <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const scrollContainer = document.getElementById("scrollContainer");
     const scrollTrack = document.getElementById("scrollTrack");
     const scrollLeft = document.getElementById("scrollLeft");
     const scrollRight = document.getElementById("scrollRight");
+    const viewport = document.getElementById("certViewport");
 
     let currentIndex = 0;
-    const itemWidth = 292; // w-72 = 288px
-    const gap = 16; // gap-4 = 16px
-    const scrollAmount = itemWidth + gap;
     const totalItems = scrollTrack.children.length;
-    const maxIndex = totalItems - 3; // Show 3 items at once
 
-    // Update scroll position with smooth animation
+    function getVisibleItems() {
+      if (window.matchMedia("(min-width: 1024px)").matches) return 3; // lg
+      if (window.matchMedia("(min-width: 640px)").matches) return 2;  // sm
+      return 1;                                                      // mobile
+    }
+
+    function getItemWidth() {
+      const first = scrollTrack.children[0];
+      return first ? first.getBoundingClientRect().width : 0;
+    }
+
+    function getGap() {
+      const styles = getComputedStyle(scrollTrack);
+      // mobile: gap-3=12px; sm+: gap-6=24px
+      return parseFloat(styles.columnGap || styles.gap || "12") || 12;
+    }
+
+    function getMaxIndex() {
+      const visible = getVisibleItems();
+      return Math.max(0, totalItems - visible);
+    }
+
+    function updateArrows() {
+      const maxIndex = getMaxIndex();
+      scrollLeft.style.opacity = currentIndex <= 0 ? "0" : "1";
+      scrollLeft.style.pointerEvents = currentIndex <= 0 ? "none" : "auto";
+      scrollRight.style.opacity = currentIndex >= maxIndex ? "0" : "1";
+      scrollRight.style.pointerEvents = currentIndex >= maxIndex ? "none" : "auto";
+    }
+
     function updateScrollPosition() {
-      const translateX = -(currentIndex * scrollAmount);
+      const itemWidth = getItemWidth();
+      const gap = getGap();
+      const translateX = -(currentIndex * (itemWidth + gap));
       scrollTrack.style.transform = `translateX(${translateX}px)`;
       updateArrows();
     }
 
-    // Check scroll position and show/hide arrows
-    function updateArrows() {
-      scrollLeft.style.opacity = currentIndex <= 0 ? "0" : "1";
-      scrollLeft.style.pointerEvents = currentIndex <= 0 ? "none" : "auto";
-
-      scrollRight.style.opacity = currentIndex >= maxIndex ? "0" : "1";
-      scrollRight.style.pointerEvents =
-        currentIndex >= maxIndex ? "none" : "auto";
-    }
-
-    // Scroll functions
     scrollLeft.addEventListener("click", () => {
       if (currentIndex > 0) {
         currentIndex--;
@@ -178,22 +185,24 @@ import '../styles/global.css'
     });
 
     scrollRight.addEventListener("click", () => {
+      const maxIndex = getMaxIndex();
       if (currentIndex < maxIndex) {
         currentIndex++;
         updateScrollPosition();
       }
     });
 
-    // Disable manual scrolling
-    scrollContainer.addEventListener("wheel", (e) => {
-      e.preventDefault();
+    // Prevent manual scrolling (optional)
+    viewport.addEventListener("wheel", (e) => e.preventDefault(), { passive: false });
+    viewport.addEventListener("touchmove", (e) => e.preventDefault(), { passive: false });
+
+    window.addEventListener("resize", () => {
+      const maxIndex = getMaxIndex();
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      updateScrollPosition();
     });
 
-    scrollContainer.addEventListener("touchmove", (e) => {
-      e.preventDefault();
-    });
-
-    // Initial state
-    updateArrows();
+    // Initial
+    updateScrollPosition();
   });
 </script>
