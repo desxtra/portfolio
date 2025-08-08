@@ -7,6 +7,7 @@
     <button
       id="projectScrollLeft"
       class="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all opacity-0 pointer-events-none"
+      aria-label="Scroll projects left"
     >
       <svg
         class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
@@ -27,6 +28,7 @@
     <button
       id="projectScrollRight"
       class="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 z-30 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-lg rounded-full p-2 md:p-3 hover:shadow-xl transition-all"
+      aria-label="Scroll projects right"
     >
       <svg
         class="w-4 h-4 md:w-5 md:h-5 text-gray-600 dark:text-gray-400"
@@ -43,19 +45,20 @@
       </svg>
     </button>
 
-    <!-- Scroll container dengan padding keluar, bukan di track -->
+    <!-- Scroll container -->
     <div id="projectScrollContainer" class="overflow-hidden pb-8 px-4">
       <div
         id="projectScrollTrack"
-        class="grid grid-flow-col
-               auto-cols-[100%]
-               sm:auto-cols-[calc((100%-1.5rem)/2)]
-               lg:auto-cols-[calc((100%-3rem)/3)]
-               gap-6
-               transition-transform duration-500 ease-out"
+        class="flex gap-6 w-full transition-transform duration-500 ease-out"
       >
-        <!-- Project Items -->
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+        <!-- Each item: equal widths per breakpoint (1/2/3 across) -->
+        <!-- basis calc notes:
+             - mobile (1): calc(100% - 0px)
+             - sm (2): calc((100% - 24px)/2) where gap-6 = 24px and there is 1 gap in view
+             - lg (3): calc((100% - 48px)/3) where 2 gaps in view
+        -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="hollow-project" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Hollow</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -64,7 +67,8 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-2" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Portfolio Website</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -72,7 +76,8 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-3" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">E-Commerce API</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -80,7 +85,8 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-4" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Task Management App</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -88,7 +94,8 @@
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 rounded-xl shadow-lg transition hover:shadow-xl flex-shrink-0 min-w-0
+                    basis-[calc(100%-0px)] sm:basis-[calc((100%-24px)/2)] lg:basis-[calc((100%-48px)/3)]">
           <img src="/img/project-hollow.png" class="rounded-lg mb-4 w-full h-48 object-cover" alt="project-5" />
           <h4 class="font-bold text-xl mb-2 text-gray-900 dark:text-gray-100">Weather Dashboard</h4>
           <p class="text-base text-gray-700 dark:text-gray-300">
@@ -108,35 +115,47 @@
     const scrollRight = document.getElementById("projectScrollRight");
 
     let currentIndex = 0;
-    const gap = 24; // gap-6 = 24px
+    const totalItems = scrollTrack.children.length;
 
     function getVisibleItems() {
-      return window.innerWidth >= 1024
-        ? 3
-        : window.innerWidth >= 640
-          ? 2
-          : 1;
+      // Match your responsive bases: 1 (default), 2 (sm), 3 (lg)
+      if (window.matchMedia("(min-width: 1024px)").matches) return 3;
+      if (window.matchMedia("(min-width: 640px)").matches) return 2;
+      return 1;
     }
 
     function getItemWidth() {
-      const visible = getVisibleItems();
-      const totalGap = gap * (visible - 1);
-      return (scrollContainer.clientWidth - totalGap) / visible;
+      const first = scrollTrack.children[0];
+      return first ? first.getBoundingClientRect().width : 0;
     }
 
-    function updateScrollPosition() {
-      const translateX = -(currentIndex * (getItemWidth() + gap));
-      scrollTrack.style.transform = `translateX(${translateX}px)`;
-      updateArrows();
+    function getGap() {
+      const styles = getComputedStyle(scrollTrack);
+      // For flex-row, horizontal gap is column-gap
+      const gap = parseFloat(styles.columnGap || styles.gap || "24");
+      return isNaN(gap) ? 24 : gap;
+    }
+
+    function getMaxIndex() {
+      const visible = getVisibleItems();
+      return Math.max(0, totalItems - visible);
     }
 
     function updateArrows() {
-      const visible = getVisibleItems();
-      const maxIndex = scrollTrack.children.length - visible;
+      const maxIndex = getMaxIndex();
       scrollLeft.style.opacity = currentIndex <= 0 ? "0" : "1";
       scrollLeft.style.pointerEvents = currentIndex <= 0 ? "none" : "auto";
       scrollRight.style.opacity = currentIndex >= maxIndex ? "0" : "1";
       scrollRight.style.pointerEvents = currentIndex >= maxIndex ? "none" : "auto";
+    }
+
+    function updateScrollPosition() {
+      const itemWidth = getItemWidth();
+      const gap = getGap();
+      const scrollAmount = itemWidth + gap;
+      const translateX = -(currentIndex * scrollAmount);
+      scrollTrack.style.transform = `translateX(${translateX}px)`;
+      updateArrows();
     }
 
     scrollLeft.addEventListener("click", () => {
@@ -145,17 +164,23 @@
         updateScrollPosition();
       }
     });
+
     scrollRight.addEventListener("click", () => {
-      const visible = getVisibleItems();
-      const maxIndex = scrollTrack.children.length - visible;
+      const maxIndex = getMaxIndex();
       if (currentIndex < maxIndex) {
         currentIndex++;
         updateScrollPosition();
       }
     });
 
-    window.addEventListener("resize", updateScrollPosition);
+    window.addEventListener("resize", () => {
+      const maxIndex = getMaxIndex();
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      // After a resize, item widths change; reapply transform
+      updateScrollPosition();
+    });
 
+    // Initial state
     updateScrollPosition();
   });
 </script>
